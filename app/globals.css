@@ -24,3 +24,93 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes float-card {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes float-badge-streak {
+  0% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  100% {
+    transform: translateY(-13px) rotate(4deg);
+  }
+}
+
+@keyframes float-badge-level {
+  0% {
+    transform: translateY(0px) rotate(2deg);
+  }
+  100% {
+    transform: translateY(-13px) rotate(4deg);
+  }
+}
+
+.animate-float-card {
+  animation: float-card 1s ease-in-out infinite alternate;
+}
+
+.animate-float-badge-streak {
+  animation: float-badge-streak 1s ease-in-out infinite alternate;
+}
+
+.animate-float-badge-level {
+  animation: float-badge-level 1s ease-in-out infinite alternate;
+  animation-delay: 0.6s;
+}
+
+@keyframes fade-in-left {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in-left {
+  animation: fade-in-left 2s ease-out;
+}
+
+.delay-0 {
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+  animation-fill-mode: backwards;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-out;
+}
