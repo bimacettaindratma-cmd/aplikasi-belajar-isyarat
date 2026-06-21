@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 
 export default function HomePage() {
   const [selectedOption, setSelectedOption] = useState("Halo")
@@ -24,18 +25,22 @@ export default function HomePage() {
             <a href="#" className="hover:text-gray-900">Komunitas</a>
           </nav>
 
-          {/* Buttons */}
           <div className="flex items-center gap-3">
-            <button className="px-5 py-2 rounded-full border border-teal-600 text-teal-600 text-sm font-semibold hover:bg-teal-50 transition">
+            <Link
+              href="/loginpage"
+              className="px-5 py-2 rounded-full border border-teal-600 text-teal-600 text-sm font-semibold hover:bg-teal-50 transition"
+            >
               Sign In
-            </button>
-            <button className="px-5 py-2 rounded-full bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition">
-              Log In
-            </button>
+            </Link>
+            <Link
+              href="/loginpage?mode=register"
+              className="px-5 py-2 rounded-full bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition"
+            >
+              Register
+            </Link>
           </div>
-        </div>
-      </header>
-
+         </div>
+     </header>
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid lg:grid-cols-2 gap-12 items-center">
@@ -43,7 +48,6 @@ export default function HomePage() {
           {/* Left column */}
           <div>
             
-
             {/* Headline */}
             <h1 className="fade-in-left delay-0 text-[2.85rem] lg:text-[3.1rem] leading-[1.12] font-extrabold text-gray-900 mb-6">
               Belajar Bahasa<br />

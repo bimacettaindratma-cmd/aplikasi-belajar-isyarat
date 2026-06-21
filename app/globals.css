@@ -114,3 +114,26 @@ body {
 .animate-fade-in {
   animation: fade-in 2s ease-out;
 }
+
+/* ===== "Noel" loop - kedut kecil tiap 3 detik ===== */
+@keyframes nudge {
+  0%, 88%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  92% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  96% {
+    transform: scale(1.02) rotate(2deg);
+  }
+}
+
+.animate-nudge {
+  animation: nudge 3s ease-out infinite;
+}
+
+/* Delay biar gantian */
+.nudge-delay-0 { animation-delay: 0s; }
+.nudge-delay-1 { animation-delay: 0.5s; }
+.nudge-delay-2 { animation-delay: 1s; }
+.nudge-delay-3 { animation-delay: 1.5s; }
