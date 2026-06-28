@@ -1,30 +1,28 @@
 "use client"
-
-import { useState } from "react"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function HomePage() {
   const [selectedOption, setSelectedOption] = useState("Halo")
   return (
-    <div className="bg-white">
+    <div className="bg-linear-to-brfrom-emerald-50 via-white to-teal-50 overflow-y-auto select-none">
       {/* NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-teal-600 flex items-center justify-center text-white text-base">
-              🤟
-            </div>
-            <span className="font-bold text-gray-900 text-lg">IsyaratKu</span>
+            <img src="/IsyaratKu.png" alt="IsyaratKu Logo" className="w-8 h-8 object-contain"/>
+            <span className="font-bold text-teal-600 text-lg">IsyaratKu</span>
           </div>
 
           {/* Nav links */}
           <nav className="hidden md:flex items-center gap-8 text-sm text-gray-600 font-medium">
             <a href="#fitur" className="hover:text-gray-900">Fitur</a>
-            <a href="#" className="hover:text-gray-900">Tentang</a>
+            <a href="#tentang" className="hover:text-gray-900">Tentang</a>
             <a href="#" className="hover:text-gray-900">Komunitas</a>
           </nav>
 
+          {/* Buttons */}
           <div className="flex items-center gap-3">
             <Link
               href="/loginpage"
@@ -36,18 +34,18 @@ export default function HomePage() {
               href="/loginpage?mode=register"
               className="px-5 py-2 rounded-full bg-teal-600 text-white text-sm font-semibold hover:bg-teal-700 transition"
             >
-              Register
+              Log In
             </Link>
           </div>
-         </div>
-     </header>
+        </div>
+      </header>
+
       {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-teal-50 via-white to-emerald-50">
+      <section className="relative overflow-hidden bg-linear-to-brfrom-teal-50 via-white to-emerald-50">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-14 grid lg:grid-cols-2 gap-12 items-center">
 
           {/* Left column */}
           <div>
-            
             {/* Headline */}
             <h1 className="fade-in-left delay-0 text-[2.85rem] lg:text-[3.1rem] leading-[1.12] font-extrabold text-gray-900 mb-6">
               Belajar Bahasa<br />
@@ -63,11 +61,13 @@ export default function HomePage() {
 
             {/* CTA Buttons */}
             <div className="fade-in-left delay-2 flex flex-wrap items-center gap-4 mb-8">
-              <button className="inline-flex items-center gap-1.5 px-6 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm shadow-md shadow-teal-200 hover:bg-teal-700 transition hover:scale-105 duration-200 active:scale-95">
+              <Link
+                href="/pilihbahasa"
+                className="inline-flex items-center gap-1.5 px-6 py-3.5 rounded-xl bg-teal-600 text-white font-semibold text-sm shadow-md shadow-teal-200 hover:bg-teal-700 transition hover:scale-105 duration-200 active:scale-95"
+              >
                 Mulai Belajar
                 <span>›</span>
-              </button>
-             
+              </Link>
             </div>
 
             {/* Social proof */}
@@ -97,7 +97,7 @@ export default function HomePage() {
             </div>
 
             {/* Main card */}
-            <div className="animate-float-card bg-white rounded-3xl shadow-xl shadow-gray-200/70 w-full max-w-md p-6 relative z-10"> 
+            <div className="animate-float-card bg-white rounded-3xl shadow-xl shadow-gray-200/70 w-full max-w-md p-6 relative z-10">
 
               {/* Lesson header */}
               <div className="flex items-center gap-3 mb-5">
@@ -121,51 +121,52 @@ export default function HomePage() {
               <p className="text-sm font-semibold text-gray-700 mb-3">Apa arti dari isyarat ini?</p>
 
               {/* Options */}
-            <div className="grid grid-cols-2 gap-3 mb-5">
-            <button
-                onClick={() => setSelectedOption("Halo")}
-                className={`text-sm font-semibold rounded-xl py-3 transition ${
-                 selectedOption === "Halo"
-                 ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
-                 : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
-             }`}
-            >
-                Halo
-            </button>
+              <div className="grid grid-cols-2 gap-3 mb-5">
+                <button
+                  onClick={() => setSelectedOption("Halo")}
+                  className={`text-sm font-semibold rounded-xl py-3 transition ${
+                    selectedOption === "Halo"
+                      ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
+                      : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
+                  }`}
+                >
+                  Halo
+                </button>
 
-            <button
-                onClick={() => setSelectedOption("Terima Kasih")}
-                className={`text-sm font-semibold rounded-xl py-3 transition ${
-                selectedOption === "Terima Kasih"
-                    ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
-                    : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
-                }`}
-            >
-                Terima Kasih
-            </button>
+                <button
+                  onClick={() => setSelectedOption("Terima Kasih")}
+                  className={`text-sm font-semibold rounded-xl py-3 transition ${
+                    selectedOption === "Terima Kasih"
+                      ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
+                      : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
+                  }`}
+                >
+                  Terima Kasih
+                </button>
 
-            <button
-                onClick={() => setSelectedOption("Selamat Pagi")}
-                className={`text-sm font-semibold rounded-xl py-3 transition ${
-                selectedOption === "Selamat Pagi"
-                    ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
-                    : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
-                }`}
-            >
-                Selamat Pagi
-            </button>
+                <button
+                  onClick={() => setSelectedOption("Selamat Pagi")}
+                  className={`text-sm font-semibold rounded-xl py-3 transition ${
+                    selectedOption === "Selamat Pagi"
+                      ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
+                      : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
+                  }`}
+                >
+                  Selamat Pagi
+                </button>
 
-            <button
-                onClick={() => setSelectedOption("Maaf")}
-                className={`text-sm font-semibold rounded-xl py-3 transition ${
-                selectedOption === "Maaf"
-                    ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
-                    : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
-                }`}
-            >
-                Maaf
-            </button>
-            </div>
+                <button
+                  onClick={() => setSelectedOption("Maaf")}
+                  className={`text-sm font-semibold rounded-xl py-3 transition ${
+                    selectedOption === "Maaf"
+                      ? "border-2 border-emerald-400 bg-emerald-50 text-emerald-700"
+                      : "border border-gray-200 text-gray-600 font-medium hover:border-gray-300"
+                  }`}
+                >
+                  Maaf
+                </button>
+              </div>
+
               {/* Progress bar */}
               <div className="flex items-center gap-3">
                 <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
@@ -187,6 +188,7 @@ export default function HomePage() {
 
         </div>
       </section>
+
       {/* STATS BAR */}
       <section className="border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-10 grid grid-cols-3 text-center divide-x divide-gray-100">
@@ -206,7 +208,7 @@ export default function HomePage() {
       </section>
 
       {/* FEATURES */}
-      <section className="bg-gray-50 py-20 scroll-mt-13 " id="fitur">
+      <section className="bg-linear-to-br from-emerald-50 via-white to-teal-50 py-20 scroll-mt-13" id="fitur">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="text-center max-w-xl mx-auto mb-14">
             <h2 className="text-3xl font-extrabold text-gray-900 mb-3">
@@ -218,70 +220,122 @@ export default function HomePage() {
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Card 1 */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
-              <div className="w-11 h-11 rounded-xl bg-indigo-100 flex items-center justify-center text-xl mb-4">
-                📖
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Jalur Pembelajaran</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Kurikulum terstruktur dari dasar hingga mahir untuk SIBI & BISINDO
-              </p>
+              <div className="w-11 h-11 rounded-xl bg-indigo-100 flex items-center justify-center text-xl mb-4">📖</div>
+              <h3 className="font-bold text-gray-900 mb-2">Materi</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">Kurikulum terstruktur dari dasar hingga mahir untuk SIBI & BISINDO</p>
             </div>
 
-            {/* Card 2 */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
-              <div className="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-xl mb-4">
-                🎮
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Kuis Interaktif</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Latihan seru dengan berbagai tipe soal dan feedback langsung
-              </p>
+              <div className="w-11 h-11 rounded-xl bg-emerald-100 flex items-center justify-center text-xl mb-4">🎮</div>
+              <h3 className="font-bold text-gray-900 mb-2">Quiz</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">Latihan seru dengan berbagai tipe soal dan feedback langsung</p>
             </div>
 
-            {/* Card 3 */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
-              <div className="w-11 h-11 rounded-xl bg-amber-100 flex items-center justify-center text-xl mb-4">
-                📔
-              </div>
+              <div className="w-11 h-11 rounded-xl bg-amber-100 flex items-center justify-center text-xl mb-4">📔</div>
               <h3 className="font-bold text-gray-900 mb-2">Kamus Isyarat</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Ribuan kosakata dengan video demonstrasi berkualitas tinggi
-              </p>
+              <p className="text-sm text-gray-500 leading-relaxed">Ribuan kosakata dengan video demonstrasi berkualitas tinggi</p>
             </div>
 
-            {/* Card 4 */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
-              <div className="w-11 h-11 rounded-xl bg-rose-100 flex items-center justify-center text-xl mb-4">
-                🎯
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Tantangan Harian</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Misi setiap hari untuk menjaga semangat belajarmu tetap membara
-              </p>
+              <p className="w-11 h-11 rounded-xl bg-rose-100 flex items-center justify-center text-2xl mb-4 text-black"> a </p>
+              <h3 className="font-bold text-gray-900 mb-2">Alfabet & Angka</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">Pelajari alfabet dan angka dalam isyarat</p>
             </div>
 
-            {/* Card 5 */}
             <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
-              <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center text-xl mb-4">
-                🏆
-              </div>
-              <h3 className="font-bold text-gray-900 mb-2">Lencana & Hadiah</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Raih achievement dan pamerkan pencapaianmu kepada dunia
-              </p>
+              <div className="w-11 h-11 rounded-xl bg-purple-100 flex items-center justify-center text-xl mb-4">🏆</div>
+              <h3 className="font-bold text-gray-900 mb-2">Pencapaian</h3>
+              <p className="text-sm text-gray-500 leading-relaxed">Raih achievement dan pamerkan pencapaianmu kepada dunia</p>
             </div>
 
-            {/* Card 6 */}
-            <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200  ">
-              <div className="w-11 h-11 rounded-xl bg-cyan-100 flex items-center justify-center text-xl mb-4">
-                📊
-              </div>
+            <div className="bg-white rounded-2xl border border-gray-100 p-6 hover:shadow-md transition hover:scale-105 duration-200">
+              <div className="w-11 h-11 rounded-xl bg-cyan-100 flex items-center justify-center text-xl mb-4">📊</div>
               <h3 className="font-bold text-gray-900 mb-2">Lacak Progres</h3>
-              <p className="text-sm text-gray-500 leading-relaxed">
-                Pantau perkembanganmu dengan grafik dan analitik lengkap
+              <p className="text-sm text-gray-500 leading-relaxed">Pantau perkembanganmu dengan grafik dan analitik lengkap</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+{/* TENTANG KAMI */}
+      <section className="bg-linear-to-br from-emerald-50 via-white to-teal-50 bg-white py-20 scroll-mt-13" id="tentang">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          
+          {/* Bagian Atas: Deskripsi & Visi */}
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-24">
+            
+            {/* Kolom Kiri: Teks */}
+            <div>
+              <p className="text-teal-600 font-bold text-xs tracking-widest uppercase mb-3">
+                Tentang Kami
               </p>
+              <h2 className="text-3xl lg:text-4xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Mengenal Lebih Dekat IsyaratKu
+              </h2>
+              <p className="text-gray-500 text-md leading-relaxed mb-8 text-justify">
+                IsyaratKu lahir dari keinginan mendalam untuk meruntuhkan batasan komunikasi yang seringkali memisahkan kita. Kami berdedikasi penuh untuk menciptakan ekosistem pembelajaran yang inklusif, di mana setiap individu memiliki kesempatan yang sama untuk memahami dan dipahami. Melalui inovasi teknologi dan kurikulum yang adaptif, kami terus berupaya menjadikan bahasa isyarat sebagai jembatan empati yang menghubungkan teman tuli dan teman dengar di seluruh penjuru Indonesia.
+              </p>
+
+              {/* Kotak Visi */}
+              <div className="bg-white border-l-4 border-teal-600 p-6 rounded-r-2xl shadow-md shadow-gray-400">
+                <p className="text-teal-700 text-xs font-bold tracking-widest uppercase mb-2">
+                  Visi
+                </p>
+                <p className="text-gray-900 font-bold text-lg italic leading-relaxed">
+                  "Menjadi platform belajar bahasa isyarat Indonesia yang nyaman dan seru untuk semua."
+                </p>
+              </div>
+            </div>
+
+            {/* Kolom Kanan: Gambar Overlapping (Placeholder) */}
+            <div className="relative h-87.5 lg:h-100 flex justify-center items-center mt-10 lg:mt-0">
+              {/* Gambar Belakang Atas */}
+              <div className="absolute top-0 right-0 lg:right-4 w-3/4 h-56 lg:h-64 bg-gray-100 rounded-2xl shadow-lg border-4 border-white flex items-center justify-center overflow-hidden z-10">
+                <img src="/laptup.png" className="w-full h-full object-cover" />
+              </div>
+              {/* Gambar Depan Bawah */}
+              <div className="absolute bottom-0 left-0 lg:left-4 w-3/4 h-56 lg:h-64 bg-gray-100 rounded-2xl shadow-xl border-4 border-white flex items-center justify-center overflow-hidden z-20">
+              <img src="/hijau.png" alt="Backgroundku" className="w-full h-full object-cover" />
+              </div>
+            </div>
+          </div>
+
+          {/* Bagian Bawah: Tim Pengembang */}
+          <div className="text-center">
+            <h3 className="text-2xl font-extrabold text-gray-900 mb-10">
+              Tim Pengembang
+            </h3>
+            
+            <div className="flex flex-wrap justify-center gap-28">
+              {/* Card Bima */}
+              <div className="bg-white rounded-4xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-3 border-red-100 py-10 px-16 flex flex-col items-center hover:-translate-y-1 transition duration-300 w-full sm:w-80">
+                <div className="w-35 h-35 bg-gray-200 rounded-full mb-20 flex items-center justify-center overflow-hidden border-4 border-red-300 shadow-2 shadow-red-100">
+                  <img src="/mario.png"/>
+                </div>
+                <h4 className="font-bold text-gray-900 text-2xl mb-1">Bima Cetta Indratma</h4>
+                <p className="text-lg text-gray-500 mb-6">Full-stack Developer</p>
+                <div className="flex items-center gap-4 text-teal-600 text-lg">
+                  <a href="#" className="hover:text-teal-800 transition">🔗</a>
+                  <a href="#" className="hover:text-teal-800 transition">✉️</a>
+                </div>
+              </div>
+
+              {/* Card Koko */}
+              <div className="bg-white rounded-4xl shadow-[0_8px_30px_rgb(0,0,0,0.06)] border-3 border-green-100 py-10 px-16 flex flex-col items-center hover:-translate-y-1 transition duration-300 w-full sm:w-80">
+                <div className="w-35 h-35 bg-gray-200 rounded-full mb-20 flex items-center justify-center overflow-hidden border-4 border-green-300 shadow-2 shadow-green-100">
+                  <img src="/luigi.png"/>
+                </div>
+                <div className="gap-4">
+                  <h4 className="font-bold text-gray-900 text-2xl mb-1">Koko Anugrah Pratama</h4>
+                <p className="text-lg text-gray-500 mb-6">Full-stack Developer</p>
+                </div>
+                <div className="flex items-center gap-4 text-teal-600 text-lg">
+                  <a href="#" className="hover:text-teal-800 transition">🔗</a>
+                  <a href="#" className="hover:text-teal-800 transition">✉️</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -291,12 +345,9 @@ export default function HomePage() {
       <footer className="bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-            {/* Brand */}
             <div className="col-span-2 lg:col-span-1">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center text-white text-sm">
-                  🤟
-                </div>
+                <div className="w-7 h-7 rounded-lg bg-teal-600 flex items-center justify-center text-white text-sm">🤟</div>
                 <span className="font-bold text-gray-900">IsyaratKu</span>
               </div>
               <p className="text-sm text-gray-500 leading-relaxed max-w-xs">
@@ -304,18 +355,14 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Platform */}
             <div>
               <p className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-4">Platform</p>
               <ul className="space-y-3 text-sm text-gray-500">
-                <li><a href="#" className="hover:text-indigo-600">Tentang Kami</a></li>
-                <li><a href="#" className="hover:text-indigo-600">Fitur</a></li>
                 <li><a href="#" className="hover:text-indigo-600">Harga</a></li>
                 <li><a href="#" className="hover:text-indigo-600">Blog</a></li>
               </ul>
             </div>
 
-            {/* Dukungan */}
             <div>
               <p className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-4">Dukungan</p>
               <ul className="space-y-3 text-sm text-gray-500">
@@ -326,7 +373,6 @@ export default function HomePage() {
               </ul>
             </div>
 
-            {/* Legal */}
             <div>
               <p className="text-xs font-bold text-gray-900 uppercase tracking-wide mb-4">Legal</p>
               <ul className="space-y-3 text-sm text-gray-500">

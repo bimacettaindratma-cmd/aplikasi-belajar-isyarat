@@ -68,19 +68,22 @@ export default function SignInPage() {
       {/* ======================================================
           KOLOM KIRI — Form Sign-in / Daftar
       ====================================================== */}
-      <div className="w-full lg:w-[400px] flex-shrink-0 bg-[#EEF2FF] flex flex-col px-9 py-10 overflow-y-auto">
+      <div className="w-full lg:w-100 shrink-0 bg-teal-50 flex flex-col px-9 py-10 overflow-y-auto">
 
         {/* --- Tombol Back ke homepage --- */}
         <Link
           href="/homepage"
-          className="flex-shrink-0 w-9 h-9 rounded-full bg-white border border-gray-200 hover:bg-gray-50 hover:scale-125 transition duration-200 flex items-center justify-center mb-6"
+          className="shrink-0 w-9 h-9 rounded-full bg-white border border-gray-200 hover:bg-gray-50 hover:scale-125 transition duration-200 flex items-center justify-center mb-6"
         >
           <img src="/back icon.svg" alt="back" className="w-4 h-4" />
         </Link>
 
         {/* --- Logo & tagline --- */}
-        <div className="mb-8">
-          <h1 className="text-2xl font-bold text-indigo-600 mb-1.5">Isyaratku</h1>
+        <div className="mb-8 gap-4">
+          <div className="flex gap-2">
+            <img src="/IsyaratKu.png" alt="IsyaratKu Logo" className="w-10 h-10 object-contain"/>
+            <h1 className="text-4xl font-bold text-teal-600 mb-1.5">Isyaratku</h1>
+          </div>
           <p className="text-[11px] font-bold tracking-wider text-gray-500">SIGN LANGUAGE LEARNING</p>
         </div>
 
@@ -121,7 +124,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="email"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -131,7 +134,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="password"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -148,7 +151,7 @@ export default function SignInPage() {
                 type="checkbox"
                 checked={staySignedIn}
                 onChange={(e) => setStaySignedIn(e.target.checked)}
-                className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-400"
+                className="w-4 h-4 rounded border-gray-300 text-teal-600 focus:ring-teal-400"
               />
               Stay signed in
             </label>
@@ -161,7 +164,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="text"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -171,7 +174,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="email"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -181,7 +184,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="password"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -191,7 +194,7 @@ export default function SignInPage() {
               </label>
               <input
                 type="password"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full border border-gray-200 rounded-xl px-4 py-3.5 text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-teal-400"
               />
             </div>
 
@@ -206,13 +209,16 @@ export default function SignInPage() {
         )}
 
         {/* --- Spacer biar footer kebawah --- */}
-        <div className="flex-1 min-h-[80px]" />
+        <div className="flex-1 min-h-20" />
 
         {/* --- Tombol panah submit --- */}
         <div className="flex justify-center mb-5">
-          <button className="w-15 h-15 rounded-2xl bg-indigo-100 hover:bg-indigo-200  hover:scale-105 duration-200 transition flex items-center justify-center">
+          <Link 
+          href="/homepage" 
+          className="w-15 h-15 rounded-2xl bg-teal-100 hover:bg-teal-200  hover:scale-105 duration-200 transition flex items-center justify-center"
+          >
             <span className="text-gray-700 text-lg">→</span>
-          </button>
+          </Link>
         </div>
 
         {/* --- Footer kecil --- */}
@@ -269,7 +275,7 @@ export default function SignInPage() {
                   key={i}
                   onClick={() => setQuoteIndex(i)}
                   className={`h-1 rounded-full transition-all ${
-                    i === quoteIndex ? "w-6 bg-indigo-500" : "w-1.5 bg-gray-300"
+                    i === quoteIndex ? "w-6 bg-teal-500" : "w-1.5 bg-gray-300"
                   }`}
                 />
               ))}
