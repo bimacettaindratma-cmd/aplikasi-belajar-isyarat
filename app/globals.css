@@ -25,6 +25,42 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* ══════════════════════════════════════════════════
+   ANIMATION DELAYS (dipakai bareng class animate-* manapun)
+   ══════════════════════════════════════════════════ */
+
+.delay-0 {
+  animation-delay: 0s;
+  animation-fill-mode: backwards;
+}
+
+.delay-1 {
+  animation-delay: 0.15s;
+  animation-fill-mode: backwards;
+}
+
+.delay-2 {
+  animation-delay: 0.3s;
+  animation-fill-mode: backwards;
+}
+
+.delay-3 {
+  animation-delay: 0.45s;
+  animation-fill-mode: backwards;
+}
+
+.delay-4 {
+  animation-delay: 0.4s;
+}
+
+.delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* ══════════════════════════════════════════════════
+   FLOATING (hero card & badges di HomePage)
+   ══════════════════════════════════════════════════ */
+
 @keyframes float-card {
   0% {
     transform: translateY(0px);
@@ -65,6 +101,52 @@ body {
   animation-delay: 0.6s;
 }
 
+/* ══════════════════════════════════════════════════
+   "NOEL" LOOP — kedut kecil tiap 3 detik
+   ══════════════════════════════════════════════════ */
+
+@keyframes nudge {
+  0%, 88%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  92% {
+    transform: scale(1.05) rotate(-2deg);
+  }
+  96% {
+    transform: scale(1.02) rotate(2deg);
+  }
+}
+
+.animate-nudge {
+  animation: nudge 3s ease-out infinite;
+}
+
+/* Delay biar gantian */
+.nudge-delay-0 { animation-delay: 0s; }
+.nudge-delay-1 { animation-delay: 0.5s; }
+.nudge-delay-2 { animation-delay: 1s; }
+.nudge-delay-3 { animation-delay: 1.5s; }
+
+/* ══════════════════════════════════════════════════
+   FADE IN — versi awal (tanpa prefix "animate-", durasi 2s)
+   Dipakai di HomePage: className="fade-in-left delay-0"
+   ══════════════════════════════════════════════════ */
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 2s ease-out;
+}
+
 @keyframes fade-in-left {
   from {
     opacity: 0;
@@ -80,30 +162,10 @@ body {
   animation: fade-in-left 2s ease-out;
 }
 
-.delay-0 {
-  animation-delay: 0s;
-  animation-fill-mode: backwards;
-}
-
-.delay-1 {
-  animation-delay: 0.15s;
-  animation-fill-mode: backwards;
-}
-
-.delay-2 {
-  animation-delay: 0.3s;
-  animation-fill-mode: backwards;
-}
-
-.delay-3 {
-  animation-delay: 0.45s;
-  animation-fill-mode: backwards;
-}
-
-@keyframes fade-in {
+@keyframes fade-in-right {
   from {
     opacity: 0;
-    transform: translateX(0px);
+    transform: translateX(20px);
   }
   to {
     opacity: 1;
@@ -111,6 +173,196 @@ body {
   }
 }
 
-.animate-fade-in {
-  animation: fade-in 2s ease-out;
+.fade-in-right {
+  animation: fade-in-right 2s ease-out;
+}
+
+/* ══════════════════════════════════════════════════
+   FADE / SLIDE — versi kedua (prefix "animate-", durasi 0.2–0.8s)
+   Dipakai di halaman Kamus, Alfabet, dll.
+   ══════════════════════════════════════════════════ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fade-slide-in 0.2s ease-out;
+}
+
+@keyframes fade-slide-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+.animate-fade-slide-out {
+  animation: fade-slide-out 0.2s ease-in forwards;
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeSlideUp 0.5s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fadeSlideUp 0.5s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fadeSlideUp 0.5s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fadeSlideUp 0.5s ease-out 0.4s forwards;
+  opacity: 0;
+}
+/* ══════════════════════════════════════════════════
+   MODAL / BACKDROP — popup di tengah (Alfabet, Kamus)
+   ══════════════════════════════════════════════════ */
+
+@keyframes backdropFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes backdropFadeOut { from { opacity: 1; } to { opacity: 0; } }
+
+.animate-backdrop-in { animation: backdropFadeIn 0.2s ease-out forwards; }
+.animate-backdrop-out { animation: backdropFadeOut 0.2s ease-in forwards; }
+
+@keyframes modalPopIn {
+  from { opacity: 0; transform: scale(0.92) translateY(8px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes modalPopOut {
+  from { opacity: 1; transform: scale(1) translateY(0); }
+  to { opacity: 0; transform: scale(0.92) translateY(8px); }
+}
+
+.animate-modal-in { animation: modalPopIn 0.2s ease-out forwards; }
+.animate-modal-out { animation: modalPopOut 0.2s ease-in forwards; }
+
+/* ==========================================================================
+   ANIMASI KHUSUS JALUR KUIS (POP & DRAW)
+   ========================================================================== */
+
+/* Garis Vertikal Tumbuh ke Bawah */
+@keyframes drawDown {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Garis Horizontal Menjalar ke Samping */
+@keyframes drawX {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Tombol Level Meletup */
+@keyframes popBounce {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-draw-down {
+  transform-origin: top;
+  animation: drawDown 0.4s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-draw-x-left {
+  transform-origin: right;
+  animation: drawX 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-draw-x-right {
+  transform-origin: left;
+  animation: drawX 0.3s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-pop-bounce {
+  animation: popBounce 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
 }
