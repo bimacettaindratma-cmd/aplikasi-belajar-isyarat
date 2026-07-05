@@ -17,7 +17,6 @@
 * **Bahasa Pemrograman**: TypeScript
 * **Styling & Desain**: Tailwind CSS
 * **Ikon**: `@tabler/icons-react`
-* **Kecerdasan Buatan (AI)**: `@tensorflow/models/handpose` & Google Teachable Machine
 
 ---
 
