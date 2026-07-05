@@ -1,3 +1,4 @@
+"use client"
 import {
   IconAward,
   IconChevronDown,
@@ -134,9 +135,9 @@ export default function BerandaPage() {
                 <ProgressItem label="Keluarga" percent={70} />
                 <ProgressItem label="Lingkungan" percent={35} />
               </div>
-              <a href="#" className="mt-5 inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:underline">
+              <Link href="/SIBI/materi" className="mt-5 inline-flex items-center gap-1 text-blue-600 text-sm font-semibold hover:underline">
                 Lihat Materi <IconChevronRight size={15} />
-              </a>
+              </Link>
             </div>
 
             {/* Pencapaian */}

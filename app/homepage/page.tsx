@@ -5,7 +5,7 @@ import { useState } from "react"
 export default function HomePage() {
   const [selectedOption, setSelectedOption] = useState("Halo")
   return (
-    <div className="bg-linear-to-brfrom-emerald-50 via-white to-teal-50 overflow-y-auto select-none">
+    <div className="bg-linear-to-r from-teal-50 to-emerald-50 overflow-y-auto select-none">
       {/* NAVBAR */}
       <header className="sticky top-0 z-50 border-b border-gray-100 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
